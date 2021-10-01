@@ -1,0 +1,125 @@
+public static void seleccion(Integer[] arreglo) {
+		int posMax;
+		Integer aux;
+		for (int i = arreglo.length - 1; i > 0; i--) {
+			posMax = 0;
+			for (int j = 0; j <= i; j++) {
+				if (arreglo[j] > arreglo[posMax]) {
+					posMax = j;
+				}
+			}
+			aux = arreglo[i];
+			arreglo[i] = arreglo[posMax];
+			arreglo[posMax] = aux;
+		}
+	}
+
+
+	
+	public static void seleccionMin(Integer[] arreglo) {
+		int posMin;
+		Integer aux;
+		for (int i = 0; i < arreglo.length-1; i++) {
+			posMin = i;
+			for (int j = i+1 ; j <= arreglo.length-1; j++) {
+				if (arreglo[j] < arreglo[posMin]) {
+					posMin = j;
+				}
+			}
+			//intercambio la posición de i con la posición del mínimo. 
+			aux = arreglo[i];
+			arreglo[i] = arreglo[posMin];
+			arreglo[posMin] = aux;
+		}
+	}
+}
+
+
+
+BURBUJEO:
+
+//ESTABLE PERO NO SENSIBLE
+public static void burbujeo(Integer[] arreglo) {
+		Integer aux;
+		for (int i = 0; i < arreglo.length - 1; i++) {
+			for (int j = arreglo.length - 1; j > i; j--) {
+				if (arreglo[j] < arreglo[j - 1]) {
+					aux = arreglo[j];
+					arreglo[j] = arreglo[j - 1];
+					arreglo[j - 1] = aux;
+				}
+			}
+		}
+	}
+
+
+// ESTABLE Y SENSIBLE	
+	public static void burbujeoW(Integer[] arreglo) {
+		Integer aux;
+		boolean hayIntercambio = true;
+		int i = 0;
+		while(hayIntercambio && i < arreglo.length - 1) {
+			hayIntercambio = false;
+			for (int j = arreglo.length - 1; j > i; j--) {
+				if (arreglo[j] < arreglo[j - 1]) {
+					hayIntercambio = true;
+					aux = arreglo[j];
+					arreglo[j] = arreglo[j - 1];
+					arreglo[j - 1] = aux;
+				}
+			}
+			i++;
+		}
+	}
+}
+
+
+
+
+
+
+
+public class Insercion {
+
+	public static void insercion(Integer arreglo[]) {
+		int i, j;
+		Integer aux;
+		for (i = 1; i < arreglo.length; i++) {
+			aux = arreglo[i];
+			j = i - 1;
+			while ((j >= 0) && (arreglo[j] > aux)) {
+				arreglo[j+1] = arreglo[j];
+				j--;
+			}
+			arreglo[j+1] = aux;
+		}
+	}
+	
+	
+	public static void insercionB(Integer arreglo[]) {
+		int i, j;
+		Integer aux;
+		
+		/*/Pongo un centinela con una pasada de burbujeo que coloca al 
+		 * elemento menor en la primera posicion del arreglo.
+		*/
+		for (int k = arreglo.length - 1; k > 0; k--) {
+			if (arreglo[k] < arreglo[k - 1]) {
+				aux = arreglo[k];
+				arreglo[k] = arreglo[k - 1];
+				arreglo[k - 1] = aux;
+			}
+		}
+				
+		for (i = 1; i < arreglo.length; i++) {
+			aux = arreglo[i];
+			j = i - 1;
+			while (arreglo[j] > aux) {
+				arreglo[j+1] = arreglo[j];
+				j--;
+			}
+			arreglo[j+1] = aux;
+		}
+	}
+}
+
