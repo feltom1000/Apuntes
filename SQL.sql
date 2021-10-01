@@ -82,3 +82,27 @@ DELETE FROM "Bandas" --Borra todo el contenido, porque no le puse una condicion.
 
 DELETE FROM "Generos"
 WHERE id = 4;
+
+
+--ALTER TABLE
+ALTER TABLE "Bandas"
+ADD COLUMN calificacion INTEGER DEFAULT 1;
+
+ALTER TABLE "Bandas"
+DROP COLUMN calificacion;
+
+ALTER TABLE "Bandas"
+RENAME COLUMN "generos_id" TO "g_id";
+
+
+--JOIN
+SELECT *
+FROM "Bandas" AS b INNER JOIN "Generos" AS g ON b.g_id == g.id; --Para cada banda busco el g.id que coincide,
+                                                                -- y lo muestro en la misma tabla
+
+SELECT *
+FROM "Bandas" AS b, "Generos" AS g
+WHERE b.g_id == g.id;  --Lo mismo que arriba, solo q sin usar la palabras join
+
+SELECT b.*, g.nombre --Trango todo de bandas, y solo el nombre de generos.
+FROM "Bandas" AS b INNER JOIN "Generos" AS g ON b.g_id == g.id;
