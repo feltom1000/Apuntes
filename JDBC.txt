@@ -1,0 +1,22 @@
+	public static void main(String[] args) throws SQLException {
+		//Cargo el Driver especifico
+			String url = "jdbc:sqlite:NOMBRE_ARCHIVO.db";
+		//Obtengo el objeto Connection
+			Connection connection = DriverManager.getConnection(url);
+			
+			String sql = "SELECT COUNT(1) AS TOTAL FROM USERS";
+		//Obtengo el objeto Statement que lleva un string sql por parametro.
+			PreparedStatement statement = connection.prepareStatement(sql);
+			
+		//Ejecuto la Consulta o Actualizacion
+			ResultSet resultados = statement.executeQuery();
+								 // o statement.executeUpdate();
+		//Leo los resultados
+			resultados.next();
+		//Utilizo o hago algo con los resultados
+			System.out.println(resultados.getInt("TOTAL"));
+
+
+		//Cierro la Conexion.		
+			connection.close();
+		}
