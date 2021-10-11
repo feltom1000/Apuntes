@@ -106,3 +106,9 @@ WHERE condition;
 SELECT SUM(column_name)
 FROM table_name
 WHERE condition;
+
+--LIMIT - limita la cantidad de resultados
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+LIMIT number;
