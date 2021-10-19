@@ -53,8 +53,27 @@ FROM (
 WHERE id = id_venta
 
 --Precio de ventas por mes      donde la cantidad de ventas sea menor a 10
-SELECT total, fecha, strftime('%m', fecha) AS 'periodo', count(*) AS 'cantidad'
+SELECT strftime('%Y%m', fecha) AS 'periodo', sum(total) AS 'TOTAL'
 FROM ventas
 GROUP BY periodo
-HAVING cantidad < 10
+HAVING count(*) < 10
 ORDER BY periodo
+
+
+-- Mejor y peor mes de ventas en precio
+SELECT periodo, max(total) AS 'total'
+FROM (
+    SELECT strftime('%Y%m', fecha) AS 'periodo', sum(total) AS 'TOTAL'
+    FROM ventas 
+    GROUP BY periodo
+)
+
+UNION ALL
+
+SELECT periodo, min(total) AS 'total'
+FROM (
+    SELECT strftime('%Y%m', fecha) AS 'periodo', sum(total) AS 'TOTAL'
+    FROM ventas 
+    GROUP BY periodo
+)
+ORDER BY total
