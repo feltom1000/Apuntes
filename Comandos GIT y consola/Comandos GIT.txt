@@ -1,0 +1,119 @@
+alias arbolito="git log --all --graph --decorate --oneline"
+
+$git remote add origin   _URL_ 		(Enlaza los dos repositorios)
+
+comandos de git aprendidos en esta clase:
+
+git init: 	lo usamos para determinar la carpeta en la que vamos a trabajar.
+
+git status: 	lo usamos para saber si tenemos un archivo añadido o borrado en nuestro proyecto, para saber en la rama en la que estamos y si tenemos commits.
+
+git add: 	es para añadir un archivo a nuestra rama seguidamente ponemos entre comillas el nombre de nuestro archivo o poner un punto para añadir todos los
+		archios de nuestra carpeta.
+
+git rm: 	lo usamos para borrar un archivo que hayamos añadido, para eliminarlo por completo de nuestra rama usamos git rm --cached.
+
+git rm --cached: 	Elimina los archivos del área de Staging y del próximo commit pero los mantiene en nuestro disco duro.
+
+git rm --force: 	Elimina los archivos de Git y del disco duro. Git siempre guarda todo, por lo que podemos acceder al registro de la existencia de los archivos,
+			de modo que podremos recuperarlos si es necesario (pero debemos usar comandos más avanzados).
+
+git commit: 	se usa para añadir un commit a nuestra rama, también podemos ponerle un -m seguidamente ponemos entre comillas nuestro ensaje.
+
+git config: 	muestra configuraciones de git también podemos usar –list para mostrar la configuración por defecto de nuestro git y si añadimos
+			--show-origin inhales nos muestra las configuraciones guardadas y su ubicación.
+
+git config --global user.name: 		cambia de manera global el nombre del usuario, seguidamente ponemos entre comillas nuestro nombre.
+
+git config --global user.email: 	cambia de manera global el email del usuario, seguidamente ponemos entre comillas nuestro nombre.
+
+git log: 	se usa para ver la historia de nuestros archivos, los commits, el usuario que lo cambió, cuando se realizaron los cambios etc. seguidamente ponemos
+		el nombre de nuestro archivo.
+
+
+$git show _archivo_ 		(Muestra los cambios que han existido en el archivo)
+
+$git commit 			(Va a crear un mensaje pero para eso abrirá VIM ya que es necesario un mensaje:
+
+			**Comando VIM:**
+			++Escribir:++ ESC+I
+			++SALIR:++ ESC+SHIFT+Z_Z
+						(en VIM se escribe el mensaje y después se sale para hacer el commit)
+
+$git diff _tag1_ _tag2_ 	(Hace la comparativa de cambios entre el archivo en su etapa en el commit del tag1 y del tag2. Considera al más reciente como
+				tag2 y al original como tag1, SI IMPORTA EL ORDEN DE LOS TAGS)
+
+-git log --stat: 		para ver el listado de los commit realizados y mas informacion como los bits que fueron agregados al archivo.
+
+git checkout (idcommit) 	// nos regresara  los cambios commit deseado  (No puedes hacer commit en este estado, ya que todo se borra y se actualiza con el
+				commit seleccionado)
+
+-git checkout master: 		para devolver el commit y el archivo a su ultimo estado.
+
+git switch - 	: 		salto 1 level a una version mas reciente
+
+git switch master		vuelvo a master
+
+git switch -c "nombreNuevaRama" 	creo nueva rama, y salto a ella.
+
+git reset --soft: 		Borramos todo el historial y los registros de Git pero guardamos los cambios que tengamos en Staging, así podemos aplicar las últimas
+				actualizaciones a un nuevo commit.
+
+git reset id-commit		 Nos lleva a cualquier commit no importa la rama, ya que identificamos el id del tag., eliminando el historial de los commit
+				posteriores al tag seleccionado.
+
+
+git reset --hard: 		Borra todo. Todo todito, absolutamente todo. Toda la información de los commits y del área de staging se borra del historial.
+
+git reset HEAD: 		Este es el comando para sacar archivos del área de Staging. No para borrarlos ni nada de eso, solo para que los últimos cambios de
+				estos archivos no se envíen al último commit, a menos que cambiemos de opinión y los incluyamos de nuevo en staging con git add.
+
+git clone			Agrega el repositurio remoto a tu repositorio local y tu directorio de trabajo.
+
+git push			Agrega los cambios a tu repositorio remoto.
+
+git fetch 			Toma el archivo con los cambios del repositorio remoto y lo agrega a tu respositorio local.
+
+git merge 			Fusiona la ultima version de tu repositorio local con el archivo en tu directorio de trabajo.
+
+git pull 			es fetch y merge unidos, ya que toma el ultimo archivo master del repositorio remoto y lo agrega al repositorio local y lo fusiona
+				en el directorio de trabajo.
+
+it branch <nombre de la rama>	 Con este comando se crea una nueva rama.
+
+git checkout <nombre de la rama>  Con este comando puedes saltar de una rama a otra.
+
+git checkout -b rama		 Crea una rama y nos mueve a ella automáticamente, Es decir, es la combinación de git brach y git checkout al mismo tiempo.
+
+git checkout rama-o-id-commit	 Nos lleva a cualquier commit sin borrar los commit posteriores al tag seleccionado.
+
+- git merge “cabecera”		 Estando en la rama master, escribo git merge nombre rama, en este ejemplo la rama se llama cabecera y se trae la rama cabecera.
+
+$git remote add origin _URL_ 		(Enlaza los dos repositorios)
+
+$git remote  				(Nos da el nombre del repositorio remoto)
+
+$git pull origin master 		(Trae las historias al repositorio local de origin, particularmente la rama master)
+					//Si hay historias no relacionadas no será exitoso, se soluciona con:
+
+$git pull origin master --allow-unrelated-histories 		(Resuelve el conflicto de historias no relacionadas entre ambos repositorios)
+
+$git push origin master 					(Sube todo al repositorio remoto)
+
+git log --all: 				Muestra toda la historia de commits de nuestro proyecto
+
+git log --all --graph: 			Además de mostrar la historia de commits muestra gráficamente las ramas
+
+git log --all --graph --decorate --oneline: 		Muestra la historia de commits y ramas de manera compacta
+
+git tag -a nombre-del-tag -m “Mensaje del tag” id-del-commit: 		Creamos un tag y asignarlo a un commit
+
+git tag: 					Muestra la lista de todos los tag
+
+git show-ref --tags: 			Muestra la lista de tags y a que commits están asignados
+
+git push origin --tags: 		Envía un tag a un repositorio remoto
+
+git tag -d nombre-del-tag: 		Borra un tag en el repositorio local
+
+git push origin :refs/tags/nombre-del-tag: 		Borra un tag en el repositorio remoto
