@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mi Primer PAgina</title></head>
+
+<body>
+</body>
+</html>
+
+--------------------------------------
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+	 <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	
+    <title>Bootstrap</title>
+  </head>
+  <body>
+    <h1>Comenzando con bootsrtap</h1>
+
+   
+  </body>
+</html>
+
+
+
+
+-------------------------------------------------------------- HTML ----------------------------------------------------------------------------------
+
+<!-- COMENTARIOS Y ANOTACIONES -->
+
+-----------------------
+	<!DOCTYPE html>
+
+		<html>
+
+  		<!-- Your HTML code goes here. TODO DOCUMENTO HTML5 NECESITA ESTO AT THE TOP -->
+
+		</html>
+------------------------
+
+links:
+	<a href="url">texto descriptivo linkeado ( clickeable)</a>
+
+Litas:
+	Comenzar lista no numerada: <ul> y por cada item es <li>
+	Comenzar lista numerada: <ol> y por cada item <li>
+
+----------- FORM -------------
+
+Submit:
+	<form action="link a donde enviarlo">aca va el input y si se quiere el boton, tambien los labels con checkbox o radio field. Todo adentro de la form. TODA INFORMACION que se vaya enviar dentro de form</form>
+input:
+	<input type="text" required(para que no se pueda enviar en blanco, sin llenarlo) id="" name="" placeholder:"Lo que sale en gris en el recuadro de escribir antes de escribir">
+		PAra poner un recuadro de llenado de data. Puede ser type= text, or date, email, number, or submit (este ultimo crea un button de submit)
+Button
+	<button type="submit">aca el texto que figura sobre el boton</button>
+
+Radio field:
+		<label for="indoor"> <input id="indoor" value="Indoor" type="radio" name="indoor-outdoor">Indoor </label>
+		<label for="outdoor"> <input id="outdoor" value="Outdoor" type="radio" name="indoor-outdoor">Outdoor </label>
+<a href="https://ibb.co/K0vZ00L"><img src="https://i.ibb.co/f1wR11n/java.jpg" alt="java" border="0"></a>
+Checkbox field:
+		<label for="loving"> <input id="loving" value="loving" type="checkbox" name="personality">Loving </label>
+		<label for="shy"> <input id="shy" value="shy" type="checkbox" name="personality"> Shy</label>
+			Si le agegas    checked     antes de cerrar el input, va a aparecer checkeado por default
+
+		El atributo "for" dentro del label hace que el texto sea clickeable. Si pones un label a lado de un input, al clickear el texto que pusiste en el for
+		de label te va a llevar al campo de input que tenga el mismo id que el for.
+
+		Podemos agregar <fieldset></fieldset> to the form with checkbox or radio buttoms for better accessibility performance, and <legend>para explicar las opciones a continuación</legend>
+
+
+
+--------------------------------------------------------------  ¡¡¡   CSS    !!!   -------------------------------------------------------------------------------
+
+	Todo CSS puede ser ubicado inline or in the top of the page in <style>	</style> inside of the <head></head> 
+
+
+.class ( asi se simboliza dentro del style en CSS, en el body es, por ejemplo, <div class="class">kjdfbdskj</div> )
+#ID
+
+
+text-align:
+	justify
+	center
+	right
+	left
+
+line-height: movimiento en el eje vertical
+---------------	
+
+		<strong></strong> (bold)
+		<em></em> (italic)
+		<u></u> (subrayar)
+		<s></s> (tachar)
+
+		<hr> (linea horizontal)
+
+padding: espacio entre el elemento y su borde
+border
+margin
+
+img:
+	src= muestra imagen.
+	alt= descripccion necesaria de la img.
+
+background:
+	url(); - imagen o patron de fondo
+	linear-gradient(90deg, color1, color2, color3...) - Degrade
+	repeating-linear-gradient(direction, color N px, color N px, color N px...); - Degrade en lineas y varias transiciones
+
+animation
+	Se especifica el nombre y la duracion:
+		Voy a usar un ID -->		#whathever {
+								animation-name: example;
+								animation-duration: 5s;
+								}
+						@keyframes example{ establezco con porcentajes por que estados pasa el objeto. 0% es el principio, 100% es el final}
+	Otras propiedades de animacion:
+					animation-fill-mode: (none | forwards | backwards | both) - Como se comporta la animacion al finalizar.
+					animation-iteration-count: N o infinite - Cuantas veces se repite
+					animation-timing-function: ease-out (rapido y lento), ease-in (lento y rapido), linear (velocidad constante).
+									cubic-bezier(tiempo 1, velocidad 1, tiempo 2, velocidad 2) de 0 a 1. Velocidad puede ser +
+
+transform: 
+ 	skewX(N deg); - Paralelograma horizontal
+	skewY(N deg); - Paralelograma Vertical
+
+	scale(N); - Aumenta el tamaño o achica el tamaño. (SIRVE CON :HOVER)
+
+	rotate(N deg); - Rota
+
+
+Formas de poner Colores:
+
+	hsl(tono(0 a 360), saturacion(cantidad de gris en %), luz(%));
+	rgba(R , G, B, opacity 0 a 1)
+
+text-transform:
+		uppercase (todo en mayusculas)
+		lowercase (todo en minusculas)
+		capitalize (Primera letra de c/ palabra en mayus)
+
+position:
+	absolute (relacionada con la distancia fisica en px)
+	relative (se mantiene en el flow de la pagina en px)
+	fixed (permanece inmovil when you scroll)
+	float (lo remueve del flow de pagina y lo podes mover para left o right. Se suele usar con width para establecer cuanto espacio horizontal necesita)
+
+
+-----------------
+		z-index: N (orden de figuras superpuestas, arriba o abajo. Numero mas altos estan mas arriba)
+		
+		width: N px (ancho)
+		height: N px (altura)
+		line-height: N px (interlineado)
+		border-radius: % o px (redondeado de corners. 50% es un circulo.)
+
+		opacity: 0 a 1
+
+
+		box-shadow: N px (dezplazamiento horizontal) N px (desplazamiento vertical) N px N px (difuminado y propagado opcionales) rgba (color)
+
+
+---------------------------------------- CSS Flexbox -------------------------------------------
+
+
+Display: flex - Acomoda los elementos en una caja flexible
+	
+		flex-drection: (row, column, row-reverse, column-reverse)
+
+		justify-content: (se encarga de que la disposición en la que los elementos in the container ocupan el espacio in the main axis) 
+				- center: los coloca en el centro del conainer. 
+				- flex-start: pone los elementos al comienzo del flex container. For a row is at the left, for a column is at the top. (Opcion default)
+				- flex-end: Al final del flex container. For a row is at the right, for a column is at the bottom.
+				- space-between: deja espacio en el medio. A los extremos ocupado.
+				- space-around: deja espacio al rededor de todos los elementos.
+				- space-evenly: deja el mismo espacio al rededor de todos los elementos.
+
+		align-items: (se encarga de que la disposición en la que los elementos in the container ocupan el espacio in the cross axis) 
+				- flex-start: For the row is at the top, for a column is at the left.
+				- flex-end: For the row is at the bottom, for the column is at the right.
+				- center: mismo espacio abajo y arriba for the row, equal space to the left and right fot columns)
+				- stretch: row's items se estiran para llenar de arriba a abajo. Columns se estiran para llenar de izq a derecha. (Opcion Default)
+				- baseline: alinea los elementos en su linea de base
+
+		align-self: (mueve elementos individualmente in the cross axis. Acepta mismos valores de align-items)
+
+		flex-wrap: (Separa los elementos en multiples rows or columns)
+				- nowrap: no los separa (Opcion Default)
+				- wrap: si es row los separa de izquierda a derecha, si es column de top to bottom
+				- wrap-reverse: lo opuesto que arriba.
+
+		flex-shrink: (encoge un item. Tiene un numero de valor.)
+		flex-grow: (agranda un item. Tiene un numero de valor.)
+		flex-basis: (tamaño original del item antes de shrink o grow. en px, em, %, etc.)
+			 
+			flex: N(flex shrink) N(flex grow) Npx(flex basis)
+
+		order: (orden en el que aparecen los items. Toma un numero como valor)
+
+
+
+---------------------------------------------- CSS Grid -------------------------------------------------
+
+
+display: grid;
+
+		grid-template-columns: (la cantidad de parametros es la cantidad de columnas, and the value of this parameters is the whidth).
+		grid-template-rows: (mismo funcionamiento que con columns).
+
+			Valores posibles: 	- fr: sets the column or row to a fraction of the available space
+						- auto:  sets the column or row to the width or height of its content automatically
+						- % : ajusta la columna o fila a un porcentaje of the container.
+
+			Se puede usar la funcion repeat: //grid-template-grow: repeat(3, 50px)// es decir: (50px 50px 50px)
+			Se puede usar la funcion minmax (da un tamaño minimo y maximo a la celda): //grid-template-grow: 10px minmax(20px, 50px);//
+													Creó 2 celdas: una de 10px, y otra de min 20px y max 50px
+				Se puede usar repeat(auto-fill, minmax(60px, 1fr)); para que se siga yenando de celdas todo lo que de el container.
+				Tambien existe auto-fit, que estira las celdas con elementos al crecer el contenedor, en vez de crear infinitas celdas mas
+
+		grid-column-gap: (crea un espacio entre todas las columnas. Toma de valor un numero).
+		grid-row-gap: (Crea un espacio entre las filas. Toma un numero como valor).
+		grid-gap: (Un valor crea espacio entre todas la filas y columnas. Dos valores hacen que el primero sea para las filas y el segundo para colums).
+
+		grid-column: (Cuantas columnas ocupa un item. Los valores estan dados por las lineas de columns, el 1er numero es dode comienza, el 2do donde termina:
+										1 / 3 es un item que ocupa las dos primeras columnas.
+										2 / 4 es un item que ocupa la segunda y tercera columna.
+		grid-row: (mismo funcionamiento que grid column)
+
+		justify-self: (alinea el contenido dentro de una celda horizontalmente. Por default: stretch)
+				stretch (llena todo el espacio de la celda)
+				start (at the left)
+				center (in the center)
+				end (at the right)
+		align-self: (alinea el contenido dentro de la celda verticalmente. Mismos valores que justify-self).
+
+		justify-items: (alinea todos los elementos de las celdas horizontalmente. Mismos valores anteriores).
+		align-items: (alinea todos los elementos de las celdas verticalamente. Mismos valores anteriores).
+
+		grid-template-areas: agrupa con un determinado nombre un grupo de celdas. La sintaxis es asi:
+													grid-template-areas:
+ 													  "header header header"
+ 													  "advert content content"
+ 													  "footer footer footer";
+								Cada "" es una fila. Cada palabra es una celda. Si pones un . en ves de palabra, is an empty cell.
+
+
+		grid-area: (Podes asignar un item a todo el grupo de celdas que se llaman de una misma manera)
+								.item1 {grid-area: header;} (siguiendo el ej de arriba, item1 ocuparia toda la fila de superior)
+
+			Si no estableciste un grupo de celdas con el mismo nombre (con grid template areas), esta funcion puede ser usada de otra manera:
+				.item1 {grid-area: 1/1/2/4; } (El item1 ocuparía de la celda 1x1 a la 2x4, es decir, la 2 primeras filas y las 4 primeras columnas)
+
+
+
+
+------------------------------------------------------------------------------ Accessibility ----------------------------------------------------------------------
+
+
+<div> - groups content
+<section> - groups related content
+<article> - groups independent, self-contained content
+<main> - titulo y contenido principal de pagina
+<h1> <h2> <h3> <h4> <h5> <h6> - titulos
+<nav> - navegation links
+<footer> - pie de pagina, nomralmente para copyrights o links that usually are in the botton of the page
+
+
+<audio id="" controls>
+	<source src="" type="audio/extension"/>
+</audio>
+
+
+<time datetime="0000-00-00"> una fecha en el medio del parrafo </time>
+
+	---- KEYBOARD USERS -----
+accesskey="" - atributo dentro de cualquier elemento para darle importancia -
+tabindex="" - atributo dentro de cualquier elemento para darle KEYBOARD FOCUS. Si pones "0" le va a dar importancia neutra.
+									Si pones "1" o superiores importancia jerarquica. Va a ser lo primero en el keyboard focus
+
+
+
+------------------------------------------------------------------ Responsive WEB Design Principles -----------------------------------------------------------
+
+
+@media (max-height: 800px) { CSS code } - Se ejecuta cuando el alto del screen device es de 800 px o menos
+
+img {
+  	max-width: 100%;
+  	height: auto;
+			}  para que una img se adapre a cualquier screen device 
+
+
+The four different viewport units are:
+
+vw (viewport width): 10vw would be 10% of the viewport's width.
+vh (viewport height): 3vh would be 3% of the viewport's height.
+vmin (viewport minimum): 70vmin would be 70% of the viewport's smaller dimension (height or width).
+vmax (viewport maximum): 100vmax would be 100% of the viewport's bigger dimension (height or width).
+
