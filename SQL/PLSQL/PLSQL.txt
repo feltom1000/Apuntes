@@ -1,0 +1,28 @@
+SET SERVEROUTPUT ON;
+
+DECLARE
+    nombre VARCHAR2(10):= 'Tomas';
+    edad NUMERIC(10):= 25;
+    fecha DATE:= '27-01-1997';
+    x INTEGER(10);
+    y INTEGER(10) := 5;
+    r CONSTANT INTEGER(10) := 100;
+BEGIN
+    x := 100;
+    dbms_output.put_line(x + y - r);
+    DBMS_output.put_line('Este chico se llama ' ||nombre|| ' y su edad es ' ||edad|| ' porque nacie un ' ||fecha);
+END;
+
+
+
+DECLARE
+    d1 BOOLEAN; -- puede tener valor true, false y null.
+    X NUMBER;
+    Z X%TYPE; --Para poner que es del mismo tipo que la variable X
+    EMPLE EMPLOYEES.SALARY%TYPE; --variable mismo valor que los valores de la columna salary
+BEGIN
+    d1:= TRUE;
+    d1:= FALSE;
+    d1:= NULL;
+    EMPLE:=100;
+END;
