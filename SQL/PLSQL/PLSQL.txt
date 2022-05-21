@@ -40,3 +40,19 @@ BEGIN
     d1:= NULL;
     EMPLE:=100;
 END;
+
+
+
+--CALCULAMOS EL IVA DE UN PRODUCTO
+
+SET SERVEROUTPUT ON;
+
+DECLARE
+    iva       CONSTANT NUMBER := 21;
+    producto  NUMBER(5.2); --puede tener decimal
+    resultado producto%TYPE;
+BEGIN
+    producto := 150;
+    resultado := producto * ( iva / 100 );
+    dbms_output.put_line(resultado);
+END;
