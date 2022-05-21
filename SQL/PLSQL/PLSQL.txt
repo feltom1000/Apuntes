@@ -1,3 +1,17 @@
+/* Operadores mas habituales
+
++   SUMA
+-   RESTA
+/   DIVISION
+*   MULTIPLICACION
+**  EXPONENTE
+||  CONCATENACION
+
+SYSDATE = FECHA DE HOY
+
+*/
+
+
 SET SERVEROUTPUT ON;
 
 DECLARE
