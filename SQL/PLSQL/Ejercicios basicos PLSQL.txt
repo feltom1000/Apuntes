@@ -29,7 +29,7 @@ END;
 
 
 
---CALCULAMOS EL IVA DE UN PRODUCTO
+					--CALCULAMOS EL IVA DE UN PRODUCTO
 
 SET SERVEROUTPUT ON;
 
@@ -45,7 +45,7 @@ END;
 
 
 
--- INDICAR SI EL NUMERO ES PAR O IMPAR
+				-- INDICAR SI EL NUMERO ES PAR O IMPAR IF/THEN
 
 SET SERVEROUTPUT ON;
 
@@ -68,7 +68,7 @@ END;´
 
 
 
--- DE QUE CATEGORIA ES EL PRODUCTO
+				-- DE QUE CATEGORIA ES EL PRODUCTO  SWITCH/CASE
 
 SET SERVEROUTPUT ON;
 
@@ -76,18 +76,19 @@ DECLARE
     producto_type CHAR(1);
 BEGIN
     producto_type := 'D';
-    IF producto_type = 'A' THEN
-        dbms_output.put_line('El producto es de la categoria ELECTRONICA');
-    ELSIF producto_type = 'B' THEN
-        dbms_output.put_line('El producto es de la categoria INFORMATICA');
-    ELSIF producto_type = 'C' THEN
-        dbms_output.put_line('El producto es de la categoria ROPA');
-    ELSIF producto_type = 'D' THEN
-        dbms_output.put_line('El producto es de la categoria MÙSICA');
-    ELSIF producto_type = 'E' THEN
-        dbms_output.put_line('El producto es de la categoria LIBROS');
-    ELSE
-        dbms_output.put_line('El codigo de producto es incorrecto');
-    END IF;
+    CASE producto_type
+        WHEN 'A' THEN
+            dbms_output.put_line('El producto es de la categoria ELECTRONICA');
+        WHEN 'B' THEN
+            dbms_output.put_line('El producto es de la categoria INFORMATICA');
+        WHEN 'C' THEN
+            dbms_output.put_line('El producto es de la categoria ROPA');
+        WHEN 'D' THEN
+            dbms_output.put_line('El producto es de la categoria MÙSICA');
+        WHEN 'E' THEN
+            dbms_output.put_line('El producto es de la categoria LIBROS');
+        ELSE
+            dbms_output.put_line('El codigo de producto es incorrecto');
+    END CASE;
 
 END;
