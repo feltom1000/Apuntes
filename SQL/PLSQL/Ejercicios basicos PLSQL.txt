@@ -45,7 +45,7 @@ END;
 
 
 
-				-- INDICAR SI EL NUMERO ES PAR O IMPAR IF/THEN
+					-- INDICAR SI EL NUMERO ES PAR O IMPAR IF/THEN
 
 SET SERVEROUTPUT ON;
 
@@ -68,7 +68,7 @@ END;´
 
 
 
-				-- DE QUE CATEGORIA ES EL PRODUCTO  SWITCH/CASE
+					-- DE QUE CATEGORIA ES EL PRODUCTO  SWITCH/CASE
 
 SET SERVEROUTPUT ON;
 
@@ -92,39 +92,3 @@ BEGIN
     END CASE;
 
 END;
-
-
-					-- LOOP
-	--EXISTE COMANDO "CONTINUE" PARA CONTINUAR EL BUCLE 
-
-DECLARE
-    x NUMBER := 1;
-BEGIN
-    LOOP
-        dbms_output.put_line(x);
-        x := x + 1;
-    
-    /* IF X = 11 THEN EXIT;
-    END IF; */
-
-        EXIT WHEN x = 11;
-    END LOOP;
-END;
-
-
-					-- LOOP O BUCLE FOR
-
-BEGIN
-	FOR i IN 5..10 LOOP 	--Numeros del 5 al 10 (hay inicial y final nada mas)
-		dbms_output.put_line(i);
-	END LOOP;
-END;
-
-	--TAMBIEN PUEDE SER EN REVERSA
-
-BEGIN
-	FOR i IN REVERSE 5..10 LOOP 	--Numeros del 10 al 5
-		dbms_output.put_line(i);
-	END LOOP;
-END;
-	

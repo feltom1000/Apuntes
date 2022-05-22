@@ -1,0 +1,168 @@
+							-- LOOP
+	--EXISTE COMANDO "CONTINUE" PARA CONTINUAR EL BUCLE 
+
+DECLARE
+    x NUMBER := 1;
+BEGIN
+    LOOP
+        dbms_output.put_line(x);
+        x := x + 1;
+    
+    /* IF X = 11 THEN EXIT;
+    END IF; */
+
+        EXIT WHEN x = 11;
+    END LOOP;
+END;
+
+
+						-- LOOP O BUCLE FOR
+
+BEGIN
+	FOR i IN 5..10 LOOP 	--Numeros del 5 al 10 (hay inicial y final nada mas)
+		dbms_output.put_line(i);
+	END LOOP;
+END;
+
+	--TAMBIEN PUEDE SER EN REVERSA
+
+BEGIN
+	FOR i IN REVERSE 5..10 LOOP 	--Numeros del 10 al 5
+		dbms_output.put_line(i);
+	END LOOP;
+END;
+
+
+						-- LOOP WHILE
+
+DECLARE
+	done BOOLEAN := FALSE;
+BEGIN
+	WHILE done LOOP
+		dbms_output.put_line('No se imprimira esto');
+	END LOOP;
+
+	WHILE NOT done LOOP
+		dbms_output.put_line('Se imprimira esto');
+	END LOOP;
+END;
+
+
+						--- EJERCICIOS
+					--TABLAS DE MULTIPLICAR (LOOP, WHILE Y FOR)
+
+		--LOOP
+
+SET SERVEROUTPUT ON;
+
+DECLARE
+X INTEGER;
+Z INTEGER;
+
+BEGIN
+	X:=1;
+	Z:=1;
+	LOOP
+		EXIT WHEN X = 11;
+		DBMS_OUTPUT.PUT_LINE('Tabla de multiplicar del numero ' ||X);
+    		LOOP
+    			DBMS_OUTPUT.PUT_LINE(X || ' x ' || Z || ' = ' || X*Z);
+    			Z:=Z+1;
+    			EXIT WHEN Z = 11;
+    			END LOOP;
+		Z:=1
+		X:=X+1;
+	END LOOP;
+END;
+
+		--WHILE
+
+SET SERVEROUTPUT ON;
+
+DECLARE
+X INTEGER;
+Z INTEGER;
+
+BEGIN
+X:=1;
+Z:=1;
+WHILE X < 11 LOOP
+	DBMS_OUTPUT.PUT_LINE('Tabla de multiplicar del numero ' ||X);
+    	WHILE Z < 11 LOOP
+    		DBMS_OUTPUT.PUT_LINE(X || ' x ' || Z || ' = ' || X*Z);
+    		Z:=Z+1;
+    		END LOOP;
+	Z:=1;
+	X:=X+1;
+	END LOOP;
+END;
+
+
+		--FOR
+
+SET SERVEROUTPUT ON;
+
+BEGIN
+FOR X IN 1..10 LOOP
+	DBMS_OUTPUT.PUT_LINE('Tabla de multiplicar del numero ' ||X);
+    	FOR Z IN 1..10 LOOP
+    		DBMS_OUTPUT.PUT_LINE(X || ' x ' || Z || ' = ' || X*Z);
+    		END LOOP;
+	END LOOP;
+END;
+
+					--ESCRIBIR UNA PALABRA AL REVEZ (WHILE)
+
+SET SERVEROUTPUT ON;
+
+DECLARE
+FRASE VARCHAR2(100);
+LIMITE NUMBER;
+FRASE_AL_REVEZ VARCHAR2(100);
+
+BEGIN
+FRASE:= 'Vamos a intentar esto que no esta tan facil';
+LIMITE := LENGTH(FRASE);
+WHILE LIMITE > 0 LOOP
+    FRASE_AL_REVEZ:= FRASE_AL_REVEZ||SUBSTR(FRASE,LIMITE,1);
+    LIMITE:= LIMITE - 1;
+    END LOOP;
+    DBMS_OUTPUT.PUT_LINE(FRASE_AL_REVEZ);
+
+END;´
+
+					--CAMBIAR A ASTERISCOS UN STRING (FOR)
+
+SET SERVEROUTPUT ON;
+
+DECLARE
+NOMBRE VARCHAR2(10);
+CODIGO VARCHAR2(10);
+
+BEGIN
+NOMBRE:= 'Eugenio';
+FOR I IN 1..LENGTH(NOMBRE) LOOP
+    CODIGO:=CODIGO||'*';
+END LOOP;
+dbms_output.put_line(NOMBRE || '=' ||CODIGO);
+END;
+
+					--MULTIPLOS DE 4 EN UN RANGO DADO (FOR)
+
+SET SERVEROUTPUT ON;
+
+DECLARE
+    inicio    NUMERIC;
+    fin       NUMERIC;
+    multiplos VARCHAR2(100);
+BEGIN
+    inicio := 4;
+    fin := 32;
+    FOR i IN inicio..fin LOOP
+        IF MOD(i, 4) = 0 THEN
+            multiplos := multiplos|| ' ' || i;
+        END IF;
+    END LOOP;
+
+    dbms_output.put_line(multiplos);
+END;
