@@ -1,17 +1,3 @@
-/* Operadores mas habituales
-
-+   SUMA
--   RESTA
-/   DIVISION
-*   MULTIPLICACION
-**  EXPONENTE
-||  CONCATENACION
-
-SYSDATE = FECHA DE HOY
-
-*/
-
-
 SET SERVEROUTPUT ON;
 
 DECLARE
@@ -30,10 +16,10 @@ END;
 
 
 DECLARE
-    d1 BOOLEAN; -- puede tener valor true, false y null.
+    d1 BOOLEAN; 			-- puede tener valor true, false y null.
     X NUMBER;
-    Z X%TYPE; --Para poner que es del mismo tipo que la variable X
-    EMPLE EMPLOYEES.SALARY%TYPE; --variable mismo valor que los valores de la columna salary
+    Z X%TYPE; 			--Para poner que es del mismo tipo que la variable X
+    EMPLE EMPLOYEES.SALARY%TYPE; 	--variable mismo valor que los valores de la columna salary
 BEGIN
     d1:= TRUE;
     d1:= FALSE;
@@ -49,7 +35,7 @@ SET SERVEROUTPUT ON;
 
 DECLARE
     iva       CONSTANT NUMBER := 21;
-    producto  NUMBER(5.2); --puede tener decimal
+    producto  NUMBER(5.2); 		--puede tener decimal
     resultado producto%TYPE;
 BEGIN
     producto := 150;

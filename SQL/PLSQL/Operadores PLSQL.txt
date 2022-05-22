@@ -1,0 +1,30 @@
+/* Operadores mas habituales
+
++   SUMA
+-   RESTA
+/   DIVISION
+*   MULTIPLICACION
+**  EXPONENTE
+||  CONCATENACION
+
+SYSDATE = FECHA DE HOY
+
+
+Operadores relacionales
+
+=	IGUAL A
+<>	DISTINTO DE
+<	MENOR QUE
+>	MAYOR QUE
+<=	MENOR O IGUAL
+>	MAYOR O IGUAL
+
+
+Operadores logicos
+
+AND	Y LÓGICO
+NOT	NEGACION
+OR	O LÓGICO
+
+
+*/
