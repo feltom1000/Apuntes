@@ -1,0 +1,69 @@
+	-----EXCEPIONES TIPICAS
+
+-- NO_DATA_FOUND    No se encuentra una fila de data
+-- TOO_MANY_ROWS    La query devuelve mas de una fila
+-- ZERO_DIVIDE      Error aritmetico, normalmente por dividir un valor por 0
+-- DUP_VAL_ON_INDEX La clave ya existe (contstrain UNIQUE, puede ser PK o no)
+
+/
+
+SET SERVEROUTPUT ON;
+
+DECLARE
+EMPL EMPLOYEES%ROWTYPE;
+
+BEGIN
+    SELECT * INTO EMPL
+    FROM employees
+    WHERE employee_id=10;
+    
+    DBMS_OUTPUT.PUT_LINE(EMPL.first_name);
+
+EXCEPTION
+
+    WHEN no_data_found THEN
+        dbms_output.put_line('ERROR: Empleado Inexistente');
+    WHEN too_many_rows THEN
+        dbms_output.put_line('ERROR: Demasiados Empleados');
+    WHEN OTHERS THEN
+        dbms_output.put_line('ERROR INDEFINIDO');
+END;
+
+
+					---Manejar excepciones no predefinidas
+
+
+SET SERVEROUTPUT ON;
+
+DECLARE
+    mi_excep EXCEPTION;
+    PRAGMA exception_init ( mi_excep, -937 );
+    v1 NUMBER;
+    v2 NUMBER;
+BEGIN
+    SELECT employee_id, SUM(salary) INTO v1, v2 FROM employees;
+    dbms_output.put_line(v1);
+EXCEPTION
+    WHEN mi_excep THEN
+        dbms_output.put_line('ERROR: Funcion de grupo incorrecta');
+    WHEN OTHERS THEN
+        dbms_output.put_line('ERROR INDEFINIDO');
+END;
+
+					---Funciones SQLCODE y SQLERRM
+
+SET SERVEROUTPUT ON;
+
+DECLARE
+EMPL EMPLOYEES%ROWTYPE;
+
+BEGIN
+    SELECT * INTO EMPL FROM employees;
+    
+    DBMS_OUTPUT.PUT_LINE(EMPL.SALARY);
+EXCEPTION
+    WHEN OTHERS THEN
+        dbms_output.put_line('ERROR INDEFINIDO');
+        dbms_output.put_line(SQLCODE);  --Funcion que captura el codigo del error
+        dbms_output.put_line(SQLERRM);  --Funcion que captura el mensaje del error
+END;
